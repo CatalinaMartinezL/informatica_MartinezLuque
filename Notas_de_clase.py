@@ -10,3 +10,6 @@
 # git add .
 # git commit -m "comentario"
 # git push
+
+# para no subir todos mis archivos a github creo un archivo nuevo (.gitignore) y dentro de el
+# pongo todas aquellas cosas
