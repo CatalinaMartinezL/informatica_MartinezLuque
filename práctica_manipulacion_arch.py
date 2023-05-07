@@ -2,7 +2,7 @@
 # Realizá un programa que lea un archivo e imprima cuántas líneas de ese archivo no empiezan con una 
 # determinada letra (por ejemplo que imprima cuántas líneas no empiezan con "P").
 
-import parser
+#import parser
 
 
 contador = 0 #arranca en cero y va sumando las que no empiezan con determinada letra
