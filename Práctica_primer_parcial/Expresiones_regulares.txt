@@ -1,0 +1,45 @@
+EXPRECIONES REGULARES: reemplaza texto con patrones
+
+Para exp. regulares es necesaria la librería RE
+>>> import re
+
+Caracteres especiales respresentados por secuencias de escape 
+    > <\n> salto de línea
+    > <\t> tab o cambio de pestaña
+    > <\s> espacio
+    < <''> comillas simples
+    > <""> comillas dobles
+
+Metacaracteres:
+-caracteres especiales con un significado para las exp. regulares
+    
+    DELIMITADORES:
+        > <^> inicio de línea
+        < <$> fin de línea
+        > <\A> inicio de texto
+        > <\Z> fin de texto
+        > <.> coincide con cualquier caracter en una línea dada
+    
+    CUANTIFICADORES:
+        > <*>  cero o más: todas las ocurrencias de un det string
+        > <+> una o más ocurrencias del patrón
+        > <?> cero o una 
+        > <{n}> exactamente n veces
+        > <^{n, m}> por lo menos n pero no mas de m veces
+
+    PREDETERMINADOS:
+        > <\w> caracter alfanumérico
+        > <\W> caracter no alfanumérico
+        > <\d> caracter numérico
+        > <\D> caracter no numérico
+        > <\s> un espacio, de cualquier tipo (\t, \n, \r, \f)
+        > <\S> cualquier caracter que no sea un espacio
+
+RANGOS:
+[a-d] [abcd]
+[1-10] [12345678910]
+[Dd] busca una D mayúscula y una d minúscula
+[^a-d] cualquier caracter menos [abcd], el ^ dentro de corchetes significa negación
+
+FUNCION SEARCH: para encontrar patrones en un texto
+FUNCION MATCH: busca el patron y devuelve la primer aparición y solo al principio de la cadena

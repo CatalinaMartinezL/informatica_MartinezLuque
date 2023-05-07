@@ -1,0 +1,19 @@
+RUTAS ABSOLUTAS Y RELATIVAS:
+
+Para acceder a los archivos necesito saber cuál es la ruta o path
+- Bibliotecas os y pathlib
+    -ruta absoluta: desde la carpeta base hasta el archivo
+    -ruta relativa: tenemos en cuenta dónde etsamos parados y aclaramos la ruta desde allí
+    
+    Ej:
+    /home/usuario/Documentos/UCEMA/Fundamentos/Práctica4/archivo.txt ---> ruta absoluta
+    ./Documentos/UCEMA/Fundamentos/Práctica4/archivo.txt ---> ruta relativa
+
+>>> from pathlib import path
+>>> home = str(path.home()) ----> ruta del home para cualquier sistema
+
+>>> ruta_relativa = os.path.join("Documentos", "UCEMA", "Fundamentos", "Práctica4", "archivo.txt")
+print("ruta_relativa")
+
+>>> ruta_absoluta = os.path.join(home,"Documentos", "UCEMA", "Fundamentos", "Práctica4", "archivo.txt")
+>>> os.path.exists(ruta_relativa) ---> devuelve un booleano para ver si existe o no

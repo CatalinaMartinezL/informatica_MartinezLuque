@@ -1,0 +1,54 @@
+PROGRAMACIÓN ORIENTADA A OBJETOS:
+
+POO: es un estilo o una forma de pensar los programas con piezas simples y reutilizables de código
+Conjunto de objetos que interactuan entre si mandandose mensajes para lograr un objetivo
+
+Objetos y mensajes: 
+    objeto: ente computacional con el cual nos comunicamos mendiante mensajes que pueden tener o no un 
+    estado interno
+
+    from aves import pepita
+    pepita.volar_en_cirvulos()
+
+Ambientes e interfaces:
+    ambiente: contexto en el que viven los objetos, tienen su estado y pueden entender mensajes
+    en un mismo ambiente podemos contar con varios objetos
+    No todos tienen que reaccionar de igual forma a los mismos mensajes, ni entender los mismos mensajes
+
+Clases y polimorfismos:
+Los objetos se crean a partir de moldes llamados clases, sirven para dar vida a objetos que se comporten 
+de igual forma
+
+ej:
+class Golobdrina:
+    def __init__(self, energia):
+        self.energia = energia
+
+    def comer_alpiste(self, gramos):
+        self.energia += 4 * gramos
+
+    def volar_en_circulos(self):
+        self.volar(0)
+
+    def volar(self, kms):
+        self.energia -= 10 + kms
+
+crear un objeto a partir de una clase: instanciación
+SELF: instancia de la clase, usandolo podemos acceder a los atributos y métodos de la clase en python
+los objetos pueden tener Interfaces compartidas
+
+Métodos vs funciones:
+class Golondrina:
+  def comer_alpiste(self, gramos):
+    self.energia = self.energia + 4 * gramos
+
+1. las funciones se invocan como funcion(argumentos)
+   los métodos se evaluan a través de mnsj como objeto.mensaje(argumentos)
+
+2. los metodos siempre declaran como primer párrafo self
+
+3. los metodos van dentro de un class, funciones por fuera
+
+
+HERENCIA: proceso mediante el cual se puede crear una clase hija que hereda de una clase madre
+sus metodos y atributos

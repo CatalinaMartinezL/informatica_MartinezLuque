@@ -1,0 +1,15 @@
+CONTROL DE VERSIONES:
+Un sistema de CdeV es una herrmaienta que realiza un seguimiento
+de los cambios de un doc o dir de manera automática
+creando diferentes versiones de nuestros archivos
+
+cada cambio se denomina commit y mantiene metadatos útiles
+estos forman un repositorio
+
+git add .
+git commit -m "comentario"
+git push
+
+git clone "link"
+
+git pull para bajar los cambios que puedan existir 

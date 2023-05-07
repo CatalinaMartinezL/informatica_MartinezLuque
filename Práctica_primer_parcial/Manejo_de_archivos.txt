@@ -1,0 +1,93 @@
+MANEJO DE ARCHIVOS:
+
+- os.listdir y glob
+Acceder a los archivos que haya en una det carpeta sin conocer sus nombres o Acceder
+a un grupo de archivos que tengan algo en común
+
+listdir --> de la biblioteca os (obtengo una lista de todos los archivos que se encuentran en una carpeta)
+glob --> de la biblioteca glonb (obtengo lo mismo que en listdir y listas de archivos específicos)
+
+>>> import glob, os
+>>> os.listdir()
+>>> glob.glob("*")
+devuelven lo mismo
+>>> glob.glob("*.py") condiciona que devolver
+
+
+ARCHIVOS: pueden ser de texto(secuencia de lineas cada linea termina \n)
+          pueden ser binarios, cualquiera que no sea de texto
+
+apertura:
+open("path_al_archivo", "modo")
+
+r ---> abre solo lectura
+r+ ---> lectura y escritura
+a ---> para agregar información, si no existe crea uno nuevo para escritura
+w ---> solo escritura, sobreescribe si ya existe, sino crea uno nuevo para escritura
+
+cierre: si o si
+archivo = open("path_al_archivo", "modo")
+arhivo.close()
+
+otra forma más segura:
+with open("path_al_archivo", "modo") as miarch:
+
+(.) directorio actual
+(..) subir de jerarquía
+
+os nos permite interactuar con el sistema operativo
+    -os.getcwd() me permite conocer el directorio de trabajo 
+    -os.chdir() me permite cambiar de directorio de forma automática
+
+ESCRITURA:
+with open(path_al_archivo, modo) as miarch:
+    miarch.write("Este es el contenido del archivo")
+
+
+
+> PASO 1: pienso lo que quiero hacer en palabras, y lo escribo.
+>PASO 2: importo lo que necesito
+    <os> --> si quiero mover o ejecutar cosas
+        > permite:
+            > <pwd> Obtener directorio actual --> getcwd()
+            > <chdir(path)> --> cambiar el directorio
+            > <mkdir(path[,modo]) --> crea un directorio
+
+    <sys> --> biblioteca que toma parámetros entre terminales
+
+>PASO 3: abro el archivo
+    > with open(path_al_archivo, modo) as miarch:
+    > Modos: r, r+, a, w
+    > miarch o palabra que elija hace referncia al archivo que abro
+    > como uso with, no hace falta que use close, es como un cierre automático
+ej:
+    >def es_un_ejemplo(arhcivo):
+        with open(archivo, "modo") as miarch
+            --> en ese caso el archvivo que abro es un parámetro, si le pusiera comillas le asignaría un archivo específico con .texto
+
+>PASO 4: definir el método que voy a usar, en base a lo que tengo que hacer.
+    > <readlines()> lee las líneas del archivo y las devuelve como listas.
+    > <readline()> lee la primer linea del archivo.
+        > al agregar un numero, lee esa cantidad de caracteres, de la primera línea.
+    > <read()> lee el contenido del archivo y lo devuelve como cadena de texto
+        > acepta un parámetro extra, ahí se puede especificar al nro de caracteres a leer.
+        ej:
+        with open("lista_compras.txt", "r") as miarch:
+        print(archivo.read(5))
+        ---> eso va a leer los primeros 5 caracteres del archivo
+
+> Algunas funciones:
+>>> <replace> ("lo que quiero reemplazar", "el reemplazo")
+        ej:
+        with open("ejemplo.txt", "r"):
+        líneas = archivo.readlines()
+        for l in líneas:
+            return (l.replace("\n", "|"))
+
+>>> <split> ("lo que quiero separar")
+        ej:
+        with open("ejemplo.txt", "r"):
+        contenido = archivo.read()
+        líneas = contenido.split("\n", "|")
+        print(lineas)
+            devuelve una cadena con el contenido sin saltos de líneas

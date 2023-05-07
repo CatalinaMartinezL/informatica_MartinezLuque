@@ -1,0 +1,46 @@
+Intro a PYTHON
+
+- prompt: >(python), $(bash)
+- print(" ")
+- variables nos permiten nombrar y reutilizar valores
+- operadores relacionales:
+    - == iguales
+    - != distintos
+    - >< mayor/ menor
+    - int() = numeros
+    - booleanos: Verdadero/ Falso
+    - string: "cadena de caracteres", primer posición [0]
+
+- manipulacion de cadenas
+    - len (string)
+    - str.upper()
+    - str.lower()
+    - str.count() cuantas n tiene
+    - str.replace()
+    - in: saber si un string esta dentro de otro
+
+- LISTAS: cadenas, numeros, listas 
+    - lista.append()
+    - lista.remove()
+    - lista.vacia = []
+    - index() devuelve la primera aparición del elemento en la lista dada como argumento de la funcion
+      en que posición esta
+    - pop() bprra y retorna el ultimo elemento de una lista
+
+- DICCIONARIOS{}:
+    - almacena datos, son mutables, no poseen un orden como las listas
+
+- FUNCIONES:
+    def funcion(argumento):
+        operación s/el argumento
+        return devuelve el resultado
+
+- CONDICIONALES:
+    if condición:
+        órdenes verdaderas
+    else:
+        órdenes falsas
+
+    BUCLES FOR: código reiterativo
+
+
