@@ -23,7 +23,7 @@ Metacaracteres:
     CUANTIFICADORES:
         > <*>  cero o más: todas las ocurrencias de un det string
         > <+> una o más ocurrencias del patrón
-        > <?> cero o una 
+        > <?> despues de algo normal cero o una, despues de un modificador es todos las coincidencias
         > <{n}> exactamente n veces
         > <^{n, m}> por lo menos n pero no mas de m veces
 
