@@ -132,7 +132,7 @@ class Contador:
     # multiplicar(numero)
     # valorActual()
 # Si se evalúa la siguiente secuencia:
-
+'''
 calculadora = Calculadora()
 calculadora.cargar(0)
 calculadora.sumar(4)
@@ -140,7 +140,8 @@ calculadora.multiplicar(5)
 calculadora.restar(8)
 calculadora.multiplicar(2)
 calculadora.valorActual()
-
+'''
+#CAMBIO 
 # el resultado debe ser 24.
 
 class Calculadora:
@@ -169,5 +170,41 @@ class Calculadora:
 # respecto de la cantidad de veces que voló y comió. Si un gorrión nunca comió, los coeficientes deben ser None.
 # Un gorrión se considera en equilibrio si su CSS está entre 0.5 y 2.
 
-# class Gorriones:
-#    def __init__ (self):
+
+class Gorriones:
+    def __init__ (self):
+        self.kilometros_totales = 0
+        self.gramos_totales = 0
+        self.kilometros_max = None
+        self.gramos_max = None
+        self.cantidad_vuelos = 0
+        self.cantidad_comidas = 0
+
+    def volar(self, kilometros):
+        self.kilometros_totales += kilometros
+        if self.kilometros_max is None or kilometros > self.kilometros_max:
+            self.kilometros_max = kilometros
+    
+    def comer(self, gramos):
+        self.gramos_totales += gramos
+        if self.gramos_max is None or gramos > self.gramos_max:
+            self.gramos_max = gramos
+    
+    def css(self):
+        if self.gramos_totales == 0:
+            return None
+        return self.kilometros_totales/ self.gramos_totales
+    
+    def cssp(self):
+        if self.gramos_max is None or self.kilometros_max is None:
+            return None
+        return self.kilometros_max/ self.gramos_max
+    
+    def cssv(self):
+        if self.cantidad_comidas == 0:
+            return None
+        return self.cantidad_vuelos/self.cantidad_comidas
+    
+    def esta_en_equilibrio(self):
+        css = self.css()
+        return css is not None and 0.5 <= css <= 2
